@@ -1,0 +1,33 @@
+{% extends 'personal/contacto.html' %}
+
+{% block contactocontenido %}
+<table class="table table-hover">
+    <thead>
+        <tr>        
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Mensaje</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in contacto_list %}
+        <tr>
+            <td>{{c.id}}</td>
+            <td>{{c.nombre}}</td>
+            <td>{{c.email}}</td>
+            <td>{{c.telefono}}</td>
+            <td>{{c.mensaje}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="d-flex align-items-center justify-content-between mb-4">
+    <h2 class="text-primary fw-bolder mb-0">Buscar Contacto</h2>
+    <a class="btn btn-primary px-4 py-3" href="{% url 'buscar' %}">
+        <div class="d-inline-block bi bi-download me-2"></div>
+        Buscar
+    </a>
+</div>
+  {% endblock contactocontenido %}
